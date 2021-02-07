@@ -3,9 +3,10 @@ local shopItems = {}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-MySQL.ready(function()
 
-	MySQL.Async.fetchAll('SELECT * FROM weashops', {}, function(result)
+function UcitajItemeESXBalkan()
+
+	local result = ESXBalkan
 		for i=1, #result, 1 do
 			if shopItems[result[i].zone] == nil then
 				shopItems[result[i].zone] = {}
@@ -19,9 +20,9 @@ MySQL.ready(function()
 		end
 
 		TriggerClientEvent('esx_weaponshop:sendShop', -1, shopItems)
-	end)
+end
 
-end)
+UcitajItemeESXBalkan()
 
 ESX.RegisterServerCallback('esx_weaponshop:getShop', function(source, cb)
 	cb(shopItems)
