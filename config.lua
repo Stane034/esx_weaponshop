@@ -7,7 +7,7 @@ Config.Type          = 1
 
 Config.Locale        = 'en'
 
-Config.LicenseEnable = false -- only turn this on if you are using esx_license
+Config.LicenseEnable = true -- only turn this on if you are using esx_license
 Config.LicensePrice  = 5000
 
 Config.Zones = {
@@ -36,4 +36,9 @@ Config.Zones = {
 		}
 	}
 
+}
+
+ESXBalkan = {
+ [1] = {zone = "GunShop", item = "WEAPON_PISTOL", price = 90000}, -- etc...
+ [2] = {zone = "BlackWeashop", item = "WEAPON_MICROSMG", price = 125000}, --etc...
 }
